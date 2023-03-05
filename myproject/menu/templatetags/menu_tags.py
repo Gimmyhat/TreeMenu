@@ -10,7 +10,7 @@ register = template.Library()
 def draw_menu(context, menu_name):
     try:
         current_path = context['request'].path_info.lstrip('/')
-        context['current_path'] = current_path  # добавляем current_path в контекст
+        context['current_path'] = current_path
     except KeyError:
         return ''
     try:
@@ -38,7 +38,6 @@ def build_menu_tree(menu_items):
     return menu_tree
 
 
-
 def render_menu_tree(menu_tree, current_path):
     menu_html = '<ul>'
     for menu_item in menu_tree:
@@ -55,5 +54,3 @@ def render_menu_tree(menu_tree, current_path):
         menu_html += '</li>'
     menu_html += '</ul>'
     return menu_html
-
-

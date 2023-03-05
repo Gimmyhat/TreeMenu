@@ -1,6 +1,10 @@
-{% load menu_tags %}
-{% for menu in menus %}
-  <h2>{{ menu.title }}</h2>
-  {% draw_menu menu.name %}
-{% endfor %}
+{% extends 'base.html' %}
+{% block title %}Home Page - My Website{% endblock %}
+{% block content %}
+    {% load menu_tags %}
+    {% for menu in menus %}
+        <h2>{{ menu.title }}</h2>
+        {% draw_menu menu.name %}
+    {% endfor %}
+{% endblock %}
 
