@@ -25,11 +25,6 @@ SECRET_KEY = 'django-insecure-!9jh$f$q8trbyfq)vz(_o-1x4yp^ftxr#n+7qakrc-uwacc#2(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG:
-    INTERNAL_IPS = ['127.0.0.1']
-    DEBUG_TOOLBAR_CONFIG = {
-        'SHOW_TOOLBAR_CALLBACK': lambda request: True,
-    }
 
 ALLOWED_HOSTS = []
 
@@ -130,3 +125,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = ['127.0.0.1']
+
