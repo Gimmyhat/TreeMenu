@@ -2,6 +2,9 @@
 {% block title %}Home Page - My Website{% endblock %}
 {% block content %}
     {% load menu_tags %}
+    <h4>'main_menu'</h4>
     {% draw_menu 'main_menu' %}
+    <h4>'sub_menu'</h4>
+    {% draw_menu 'sub_menu' %}
 {% endblock %}
 

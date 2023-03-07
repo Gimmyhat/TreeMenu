@@ -25,8 +25,8 @@ class MenuItemAdmin(admin.ModelAdmin):
             # определяем URL, если он не задан
             parent = obj.parent
             if parent:
-                obj.url = parent.url.lower() + '/' + obj.name.lower()
+                obj.url = (parent.url + '/' + obj.name).lower().replace(' ', '_')
             else:
-                obj.url = obj.name
+                obj.url = obj.name.lower().replace(' ', '_')
 
         obj.save()
