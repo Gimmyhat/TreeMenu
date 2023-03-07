@@ -15,5 +15,18 @@ class MenuAdmin(admin.ModelAdmin):
 
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'menu', 'parent')
-    list_filter = ('menu',)
+    list_display = ('name', 'menu', 'parent', 'url')
+    list_filter = ('menu', 'parent')
+
+    # prepopulated_fields = {'url': ('name',)}
+
+    def save_model(self, request, obj, form, change):
+        if not obj.url:
+            # определяем URL, если он не задан
+            parent = obj.parent
+            if parent:
+                obj.url = (parent.url + '/' + obj.name).lower().replace(' ', '_')
+            else:
+                obj.url = obj.name.lower().replace(' ', '_')
+
+        obj.save()
