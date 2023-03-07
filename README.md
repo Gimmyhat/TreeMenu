@@ -35,4 +35,8 @@ python manage.py loaddata db.json
 ------
 Скриншоты:
 
+![Screenshot_46](https://user-images.githubusercontent.com/50045582/223417030-1423a8e1-79e3-458a-8a68-d5160a90d81a.png)
 
+![Screenshot_47](https://user-images.githubusercontent.com/50045582/223417051-1b095c49-ac5f-48cd-ae69-e959fa8a92d8.png)
+
+На отрисовку каждого меню требуется ровно 1 запрос к БД (2 меню - 2 запроса)
